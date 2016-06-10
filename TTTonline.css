@@ -1,0 +1,136 @@
+﻿body {    
+    background-color: lightgray;
+}
+
+#titel {  
+    text-align: center;
+    font-family: Segoe UI;
+    font-size: 50px; 
+    margin-top: -10px;
+    margin-bottom: 0px;
+}
+
+#copyright {
+    text-align: center;
+    font-family: Segoe UI;
+    font-size: 15px;
+}
+
+#i_text {     
+    text-align: center;
+    font-family: Segoe UI;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.a, .b, .c {
+    background-color:gray;
+    width:10vw;
+    height:10vw; 
+    border:none;    
+    font-family:Segoe UI; 
+    text-align:center;
+    vertical-align:middle;
+    font-size:6vw;
+    line-height:0vw;
+    position:relative;   
+    z-index:0;
+    float:left;
+}
+
+.dinges {
+    background-color: gray;
+}
+
+.hor {
+    background-color: black;
+    width: 32vw;
+    height: 1vw;     
+    float:left
+}
+
+.ver {
+    background-color: black;
+    width:1vw;
+    height:10vw;  
+    float:left  
+}
+
+#board {
+    text-align:center;      
+    width:32vw; 
+    height:32vw;
+    margin:0 auto;
+    position:relative;
+}
+
+.flip {   
+    -ms-transform: scaleX(-1); /* IE 9 */
+    -webkit-transform: scaleX(-1); /* Safari */
+    transform:scaleX(-1);
+    filter:FlipH;
+    transition-duration:1s;
+}
+
+.disappear {
+    opacity:0.01;   
+    -ms-transform: scale(0.01); /* IE 9 */
+    -webkit-transform: scale(0.01); /* Safari */
+    transform:scale(0.01);
+    transition-duration:2s;
+}
+
+.appear {
+    opacity:1;   
+    -ms-transform: scale(1); /* IE 9 */
+    -webkit-transform: scale(1); /* Safari */
+    transform:scale(1);
+    transition-duration:2s;
+}
+
+.hoverButton:hover {
+    background-color:darkgray;
+    transition:none;  
+}
+
+.clickedColor {
+    color:black;
+    background-color:darkgray;
+}
+
+.colorX {
+    color:black;
+    background-color:gray;
+}
+
+#input {
+    font-family:Segoe UI;
+    background-color:darkblue;
+    border:none;
+    color:white;
+    height:50px;
+    width:200px;
+    text-align:center;
+    text-decoration:none;   
+    font-size:20px;
+    margin:0;
+}
+
+#input:hover {
+    background-color:blue;
+}
+
+#bottom {
+    text-align:center;
+}
+
+.version-box {
+    position:relative;
+}
+.version {
+    font-family:Segoe UI;
+    position:absolute;
+    font-size:1vw;
+    bottom:0;
+    right:0;
+}
