@@ -18,7 +18,7 @@ input.onclick = function Run() {
         numnq[i].classList.remove("clickedColor");
         numnq[i].classList.remove("colorX");
     }
-    whattodisable()
+    whattodisable();
     input.classList.add("disappear"); input.disabled = true;
     for (i = 0; i < squaresStatus.length; i++) { numnq[i].classList.add("flip"); }  
     setTimeout(function () {
@@ -45,7 +45,7 @@ input.onclick = function Run() {
     eight.onclick = function () { userClick(a1, 7, invoer1); }
     nine.onclick = function () { userClick(a1, 8, invoer1); }
     function invoer1(a) {
-        whattodisable(a);
+        whattodisable();
         setTimeout(function () { document.getElementById("i_text").innerHTML = "Thank you."; }, 1000)
         setTimeout(function () { document.getElementById("i_text").innerHTML = "My turn:"; }, 2000)
         setTimeout(function () {
@@ -107,7 +107,7 @@ input.onclick = function Run() {
                 seven.onclick = function () { userClick(c1, 6, invoer3); }             
                 nine.onclick = function () { userClick(c1, 8, invoer3); }
                 function invoer3(c) {
-                    whattodisable()
+                    whattodisable();
                     if (c === 4) {
                         setTimeout(function () { document.getElementById("i_text").innerHTML = "My turn:"; }, 1000)
                         setTimeout(function () { nine.value = "X"; squaresStatus[1] = 1; nine.classList.add("colorX"); nine.classList.remove("hoverButton"); document.getElementById("nine").disabled = true; }, 2000)
@@ -115,7 +115,7 @@ input.onclick = function Run() {
                         one.onclick = function () { userClick(d1, 0, invoer4); }                        
                         seven.onclick = function () { userClick(d1, 6, invoer4); }
                         function invoer4(d) {
-                            whattodisable()
+                            whattodisable();
                             if (d === 1) { draw(); }
                             else if (d === 7) { lose2(5); }
                         }
@@ -126,14 +126,13 @@ input.onclick = function Run() {
             else if (a === 7 && b === 2) {
                 setTimeout(function () { four.value = "X"; squaresStatus[3] = 1; four.classList.add("colorX"); four.classList.remove("hoverButton"); document.getElementById("four").disabled = true; }, 2000)
                 setTimeout(function () { document.getElementById("i_text").innerHTML = "Your turn."; whattoenable(); }, 3000)
-
                 one.onclick = function () { userClick(c1, 0, invoer3); }                
                 three.onclick = function () { userClick(c1, 2, invoer3); }              
                 six.onclick = function () { userClick(c1, 5, invoer3); }                
                 eight.onclick = function () { userClick(c1, 7, invoer3); }
                 nine.onclick = function () { userClick(c1, 8, invoer3); }
                 function invoer3(c) {
-                    whattodisable()
+                    whattodisable();
                     if (c === 6) {
                         setTimeout(function () { document.getElementById("i_text").innerHTML = "My turn:"; }, 1000)
                         setTimeout(function () { one.value = "X"; squaresStatus[1] = 1; one.classList.add("colorX"); one.classList.remove("hoverButton"); document.getElementById("one").disabled = true; }, 2000)
@@ -141,7 +140,7 @@ input.onclick = function Run() {
                         three.onclick = function () { userClick(d1, 2, invoer4); }
                         nine.onclick = function () { userClick(d1, 8, invoer4); }
                         function invoer4(d) {
-                            whattodisable()
+                            whattodisable();
                             if (d === 9) { draw(); }
                             else if (d === 3) { lose2(3); }
                         }
@@ -158,15 +157,15 @@ input.onclick = function Run() {
                 six.onclick = function () { userClick(c1, 5, invoer3); }
                 seven.onclick = function () { userClick(c1, 6, invoer3); }
                 function invoer3(c) {
-                    whattodisable()
+                    whattodisable();
                     if (c === 2) {
                         setTimeout(function () { document.getElementById("i_text").innerHTML = "My turn:"; }, 1000)
                         setTimeout(function () { seven.value = "X"; squaresStatus[1] = 1; seven.classList.add("colorX"); seven.classList.remove("hoverButton"); document.getElementById("seven").disabled = true; }, 2000)
                         setTimeout(function () { document.getElementById("i_text").innerHTML = "Your turn."; whattoenable(); }, 3000)
                         one.onclick = function () { userClick(d1, 0, invoer4); }
-                        seven.onclick = function () { userClick(d1, 6, invoer4); }
+                        three.onclick = function () { userClick(d1, 2, invoer4); }
                         function invoer4(d) {
-                            whattodisable()
+                            whattodisable();
                             if (d === 3) { draw(); }
                             else if (d === 1) { lose2(7); }
                         }
@@ -184,7 +183,7 @@ input.onclick = function Run() {
                 eight.onclick = function () { userClick(c1, 7, invoer3); }
                 nine.onclick = function () { userClick(c1, 8, invoer3); }
                 function invoer3(c) {
-                    whattodisable()
+                    whattodisable();
                     if (c === 4) { lose2(c - 1); }
                     else if (c === 9) { lose2(c - 1); }
                     else { lose2(8); }
@@ -229,7 +228,7 @@ input.onclick = function Run() {
                 seven.onclick = function () { userClick(c1, 6, invoer3); }                
                 nine.onclick = function () { userClick(c1, 8, invoer3); }
                 function invoer3(c) {
-                    whattodisable()
+                    whattodisable();
                     if (c === 1) { lose2(c - 1); }
                     else if (c === 6) { lose2(c - 1); }
                     else { lose2(0); }
