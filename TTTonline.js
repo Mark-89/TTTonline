@@ -286,7 +286,7 @@ function Run() {
         else if (loseNumber > 4) { loseOpposite = 8 - loseNumber; }
         setTimeout(function () { numnq[loseOpposite].value = "X"; squaresStatus[loseOpposite] = 1; numnq[loseOpposite].classList.add("colorX"); numnq[loseOpposite].classList.remove("hoverButton"); document.getElementById(numq[loseOpposite]).disabled = true; }, 2000)
         setTimeout(function () { document.getElementById("i_text").innerHTML = "You lose."; }, 3000)
-        setTimeout(function () { input.classList.remove("vanish"); document.getElementById("input").value = "Try again?"; input.classList.add("appear"); }, 4000)
+        setTimeout(function () { input.classList.remove("disappear"); document.getElementById("input").value = "Try again?"; input.classList.add("appear"); }, 4000)
         setTimeout(function () { input.classList.remove("disappear", "appear"); input.disabled = false; }, 6000)
         input.onclick = function () { Run2(); input.classList.add("disappear"); }
 
@@ -299,7 +299,7 @@ function Run() {
         setTimeout(function () { document.getElementById("i_text").innerHTML = "My turn:"; }, 1000)
         setTimeout(function () { numnq[loseOpposite].value = "X"; squaresStatus[loseOpposite] = 1; numnq[loseOpposite].classList.add("colorX"); numnq[loseOpposite].classList.remove("hoverButton"); document.getElementById(numq[loseOpposite]).disabled = true; }, 2000)
         setTimeout(function () { document.getElementById("i_text").innerHTML = "You lose."; }, 3000)
-        setTimeout(function () { input.classList.remove("vanish"); document.getElementById("input").value = "Try again?"; input.classList.add("appear"); }, 4000)
+        setTimeout(function () { input.classList.remove("disappear"); document.getElementById("input").value = "Try again?"; input.classList.add("appear"); }, 4000)
         setTimeout(function () { input.classList.remove("disappear", "appear"); input.disabled = false; }, 6000)
         input.onclick = function () { Run2(); input.classList.add("disappear"); }
 
@@ -308,7 +308,7 @@ function Run() {
 
     function draw() {
         setTimeout(function () { document.getElementById("i_text").innerHTML = "It's a draw."; }, 1000)
-        setTimeout(function () { input.classList.remove("vanish"); document.getElementById("input").value = "Play again?"; input.classList.add("appear"); }, 2000)
+        setTimeout(function () { input.classList.remove("disappear"); document.getElementById("input").value = "Play again?"; input.classList.add("appear"); }, 2000)
         setTimeout(function () { input.classList.remove("disappear", "appear"); input.disabled = false; }, 4000)
         input.onclick = function () { Run2(); input.classList.add("disappear"); }
     }
@@ -475,21 +475,21 @@ function Run2() {
 
     function draw2() {
         setTimeout(function () { document.getElementById("i_text").innerHTML = "It's a draw."; }, 1000)
-        setTimeout(function () { input.classList.remove("vanish"); document.getElementById("input").value = "Try again?"; input.classList.add("appear"); }, 2000)
+        setTimeout(function () { input.classList.remove("disappear"); document.getElementById("input").value = "Try again?"; input.classList.add("appear"); }, 2000)
         setTimeout(function () { input.classList.remove("disappear", "appear"); input.disabled = false; }, 4000)
         input.onclick = function () { Run(); input.classList.add("disappear"); }
     }
 
     function win2() {
         setTimeout(function () { document.getElementById("i_text").innerHTML = "You win."; }, 1000)
-        setTimeout(function () { input.classList.remove("vanish"); document.getElementById("input").value = "Play again?"; input.classList.add("appear"); }, 2000)
+        setTimeout(function () { input.classList.remove("disappear"); document.getElementById("input").value = "Play again?"; input.classList.add("appear"); }, 2000)
         setTimeout(function () { input.classList.remove("disappear", "appear"); input.disabled = false; }, 4000)
         input.onclick = function () { Run(); input.classList.add("disappear"); }
     }
 
     function lose4() {
         setTimeout(function () { document.getElementById("i_text").innerHTML = "You lose."; }, 1000)
-        setTimeout(function () { input.classList.remove("vanish"); document.getElementById("input").value = "Try again?"; input.classList.add("appear"); }, 2000)
+        setTimeout(function () { input.classList.remove("disappear"); document.getElementById("input").value = "Try again?"; input.classList.add("appear"); }, 2000)
         setTimeout(function () { input.classList.remove("disappear", "appear"); input.disabled = false; }, 4000)
         input.onclick = function () { Run(); input.classList.add("disappear"); }
     }
