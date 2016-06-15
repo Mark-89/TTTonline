@@ -1,9 +1,21 @@
-﻿three.classList.add("clickedColor");
-six.classList.add("clickedColor");
+﻿threeFront.classList.add("clickedColor");
+sixFront.classList.add("clickedColor");
+oneFront.classList.add("colorX");
+fiveFront.classList.add("colorX");
+nineFront.classList.add("colorX");
+twoFront.classList.add("back");
+fourFront.classList.add("back");
+sevenFront.classList.add("back");
+eightFront.classList.add("back");
+//for (i = 0; i = 8; i++) { document.getElementById(numq[i]).disabled = true; }
 
 function Vars() {
     numnq = [one, two, three, four, five, six, seven, eight, nine];
     numq = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+    numnqFront = [oneFront, twoFront, threeFront, fourFront, fiveFront, sixFront, sevenFront, eightFront, nineFront];
+    numqFront = ["oneFront", "twoFront", "threeFront", "fourFront", "fiveFront", "sixFront", "sevenFront", "eightFront", "nineFront"];
+    numnqCon = [oneContainer, twoContainer, threeContainer, fourContainer, fiveContainer, sixContainer, sevenContainer, eightContainer, nineContainer];
+    numqCon = ["oneContainer", "twoContainer", "threeContainer", "fourContainer", "fiveContainer", "sixContainer", "sevenContainer", "eightContainer", "nineContainer"];
     squaresStatus = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     circlesCrosses = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 }
@@ -23,25 +35,25 @@ function Run() {
 
     for (i = 0; i < squaresStatus.length; i++) {
         document.getElementById(numq[i]).disabled = false;
-        numnq[i].classList.remove("clickedColor", "colorX", "hoverButton");        
+        numnq[i].classList.remove("hoverButton"); numnq[i].classList.add("back");
     }
     whattodisable();
     input.classList.add("disappear"); input.disabled = true;
-    for (i = 0; i < squaresStatus.length; i++) { numnq[i].classList.add("flip"); }
+    for (i = 0; i < squaresStatus.length; i++) { numnqCon[i].classList.add("flip"); }
     setTimeout(function () {
-        one.value = ""; two.value = ""; three.value = ""; four.value = ""; five.value = "";
-        six.value = ""; seven.value = ""; eight.value = ""; nine.value = "";
+        oneFront.value = ""; twoFront.value = ""; threeFront.value = ""; fourFront.value = ""; fiveFront.value = "";
+        sixFront.value = ""; sevenFront.value = ""; eightFront.value = ""; nineFront.value = "";
     }, 250)
     setTimeout(function () {
         document.getElementById("i_text").innerHTML = "I will start:";
-        for (i = 0; i < squaresStatus.length; i++) { numnq[i].classList.remove("flip"); }
+        for (i = 0; i < squaresStatus.length; i++) { numnqFront[i].classList.remove("clickedColor", "colorX", "back"); }
     }, 2000)
     setTimeout(function () {
-        five.value = "X"; squaresStatus[4] = 1; five.classList.add("colorX"); 
+        fiveFront.value = "X"; fiveContainer.classList.remove("flip"); squaresStatus[4] = 1; fiveFront.classList.add("colorX");
         document.getElementById("five").disabled = true;
     }, 3000)
     setTimeout(function () {
-        document.getElementById("i_text").innerHTML = "Your turn. Click a field.";        
+        document.getElementById("i_text").innerHTML = "Your turn. Click a field.";
         one.classList.add("hoverButton");
         two.classList.add("hoverButton");
         three.classList.add("hoverButton");
@@ -65,14 +77,14 @@ function Run() {
         setTimeout(function () { document.getElementById("i_text").innerHTML = "Thank you."; }, 1000)
         setTimeout(function () { document.getElementById("i_text").innerHTML = "My turn:"; }, 2000)
         setTimeout(function () {
-            if (a === 1) { four.value = "X"; squaresStatus[3] = 1; four.classList.add("colorX"); four.classList.remove("hoverButton"); document.getElementById("four").disabled = true; }
-            else if (a === 2) { three.value = "X"; squaresStatus[2] = 1; three.classList.add("colorX"); three.classList.remove("hoverButton"); document.getElementById("three").disabled = true; }
-            else if (a === 3) { two.value = "X"; squaresStatus[1] = 1; two.classList.add("colorX"); two.classList.remove("hoverButton"); document.getElementById("two").disabled = true; }
-            else if (a === 4) { one.value = "X"; squaresStatus[0] = 1; one.classList.add("colorX"); one.classList.remove("hoverButton"); document.getElementById("one").disabled = true; }
-            else if (a === 6) { nine.value = "X"; squaresStatus[8] = 1; nine.classList.add("colorX"); nine.classList.remove("hoverButton"); document.getElementById("nine").disabled = true; }
-            else if (a === 7) { eight.value = "X"; squaresStatus[7] = 1; eight.classList.add("colorX"); eight.classList.remove("hoverButton"); document.getElementById("eight").disabled = true; }
-            else if (a === 8) { seven.value = "X"; squaresStatus[6] = 1; seven.classList.add("colorX"); seven.classList.remove("hoverButton"); document.getElementById("seven").disabled = true; }
-            else if (a === 9) { six.value = "X"; squaresStatus[5] = 1; six.classList.add("colorX"); six.classList.remove("hoverButton"); document.getElementById("six").disabled = true; }
+            if (a === 1) { fourFront.value = "X"; fourContainer.classList.remove("flip"); squaresStatus[3] = 1; fourFront.classList.add("colorX"); four.classList.remove("hoverButton"); document.getElementById("four").disabled = true; }
+            else if (a === 2) { threeFront.value = "X"; threeContainer.classList.remove("flip"); squaresStatus[2] = 1; threeFront.classList.add("colorX"); three.classList.remove("hoverButton"); document.getElementById("three").disabled = true; }
+            else if (a === 3) { twoFront.value = "X"; twoContainer.classList.remove("flip"); squaresStatus[1] = 1; twoFront.classList.add("colorX"); two.classList.remove("hoverButton"); document.getElementById("two").disabled = true; }
+            else if (a === 4) { oneFront.value = "X"; oneContainer.classList.remove("flip"); squaresStatus[0] = 1; oneFront.classList.add("colorX"); one.classList.remove("hoverButton"); document.getElementById("one").disabled = true; }
+            else if (a === 6) { nineFront.value = "X"; nineContainer.classList.remove("flip"); squaresStatus[8] = 1; nineFront.classList.add("colorX"); nine.classList.remove("hoverButton"); document.getElementById("nine").disabled = true; }
+            else if (a === 7) { eightFront.value = "X"; eightContainer.classList.remove("flip"); squaresStatus[7] = 1; eightFront.classList.add("colorX"); eight.classList.remove("hoverButton"); document.getElementById("eight").disabled = true; }
+            else if (a === 8) { sevenFront.value = "X"; sevenContainer.classList.remove("flip"); squaresStatus[6] = 1; sevenFront.classList.add("colorX"); seven.classList.remove("hoverButton"); document.getElementById("seven").disabled = true; }
+            else if (a === 9) { sixFront.value = "X"; sixContainer.classList.remove("flip"); squaresStatus[5] = 1; sixFront.classList.add("colorX"); six.classList.remove("hoverButton"); document.getElementById("six").disabled = true; }
         }, 3000)
         setTimeout(function () { document.getElementById("i_text").innerHTML = "Your turn."; whattoenable(); }, 4000)
         one.onclick = function () { userClick(b1, 0, invoer2); }
@@ -87,7 +99,7 @@ function Run() {
             whattodisable();
             setTimeout(function () { document.getElementById("i_text").innerHTML = "My turn:"; }, 1000)
             if (a === 1 && b === 6) {
-                setTimeout(function () { two.value = "X"; squaresStatus[1] = 1; two.classList.add("colorX"); two.classList.remove("hoverButton"); document.getElementById("two").disabled = true; }, 2000)
+                setTimeout(function () { twoFront.value = "X"; twoContainer.classList.remove("flip"); squaresStatus[1] = 1; twoFront.classList.add("colorX"); two.classList.remove("hoverButton"); document.getElementById("two").disabled = true; }, 2000)
                 setTimeout(function () { document.getElementById("i_text").innerHTML = "Your turn."; whattoenable() }, 3000)
                 three.onclick = function () { userClick(c1, 2, invoer3); }
                 four.onclick = function () { userClick(c1, 3, invoer3); }
@@ -98,7 +110,7 @@ function Run() {
                     whattodisable()
                     if (c === 8) {
                         setTimeout(function () { document.getElementById("i_text").innerHTML = "My turn:"; }, 1000)
-                        setTimeout(function () { three.value = "X"; squaresStatus[1] = 1; three.classList.add("colorX"); three.classList.remove("hoverButton"); document.getElementById("three").disabled = true; }, 2000)
+                        setTimeout(function () { threeFront.value = "X"; threeContainer.classList.remove("flip"); squaresStatus[1] = 1; threeFront.classList.add("colorX"); three.classList.remove("hoverButton"); document.getElementById("three").disabled = true; }, 2000)
                         setTimeout(function () {
                             document.getElementById("i_text").innerHTML = "Your turn.";
                             whattoenable();
@@ -115,7 +127,7 @@ function Run() {
                 }
             }
             else if (a === 3 && b === 8) {
-                setTimeout(function () { six.value = "X"; squaresStatus[5] = 1; six.classList.add("colorX"); six.classList.remove("hoverButton"); document.getElementById("six").disabled = true; }, 2000)
+                setTimeout(function () { sixFront.value = "X"; sixContainer.classList.remove("flip"); squaresStatus[5] = 1; sixFront.classList.add("colorX"); six.classList.remove("hoverButton"); document.getElementById("six").disabled = true; }, 2000)
                 setTimeout(function () { document.getElementById("i_text").innerHTML = "Your turn."; whattoenable(); }, 3000)
                 one.onclick = function () { userClick(c1, 0, invoer3); }
                 two.onclick = function () { userClick(c1, 1, invoer3); }
@@ -126,7 +138,7 @@ function Run() {
                     whattodisable();
                     if (c === 4) {
                         setTimeout(function () { document.getElementById("i_text").innerHTML = "My turn:"; }, 1000)
-                        setTimeout(function () { nine.value = "X"; squaresStatus[1] = 1; nine.classList.add("colorX"); nine.classList.remove("hoverButton"); document.getElementById("nine").disabled = true; }, 2000)
+                        setTimeout(function () { nineFront.value = "X"; nineContainer.classList.remove("flip"); squaresStatus[1] = 1; nineFront.classList.add("colorX"); nine.classList.remove("hoverButton"); document.getElementById("nine").disabled = true; }, 2000)
                         setTimeout(function () { document.getElementById("i_text").innerHTML = "Your turn."; whattoenable(); }, 3000)
                         one.onclick = function () { userClick(d1, 0, invoer4); }
                         seven.onclick = function () { userClick(d1, 6, invoer4); }
@@ -140,7 +152,7 @@ function Run() {
                 }
             }
             else if (a === 7 && b === 2) {
-                setTimeout(function () { four.value = "X"; squaresStatus[3] = 1; four.classList.add("colorX"); four.classList.remove("hoverButton"); document.getElementById("four").disabled = true; }, 2000)
+                setTimeout(function () { fourFront.value = "X"; fourContainer.classList.remove("flip"); squaresStatus[3] = 1; fourFront.classList.add("colorX"); four.classList.remove("hoverButton"); document.getElementById("four").disabled = true; }, 2000)
                 setTimeout(function () { document.getElementById("i_text").innerHTML = "Your turn."; whattoenable(); }, 3000)
                 one.onclick = function () { userClick(c1, 0, invoer3); }
                 three.onclick = function () { userClick(c1, 2, invoer3); }
@@ -151,7 +163,7 @@ function Run() {
                     whattodisable();
                     if (c === 6) {
                         setTimeout(function () { document.getElementById("i_text").innerHTML = "My turn:"; }, 1000)
-                        setTimeout(function () { one.value = "X"; squaresStatus[1] = 1; one.classList.add("colorX"); one.classList.remove("hoverButton"); document.getElementById("one").disabled = true; }, 2000)
+                        setTimeout(function () { oneFront.value = "X"; oneContainer.classList.remove("flip"); squaresStatus[1] = 1; oneFront.classList.add("colorX"); one.classList.remove("hoverButton"); document.getElementById("one").disabled = true; }, 2000)
                         setTimeout(function () { document.getElementById("i_text").innerHTML = "Your turn."; whattoenable(); }, 3000)
                         three.onclick = function () { userClick(d1, 2, invoer4); }
                         nine.onclick = function () { userClick(d1, 8, invoer4); }
@@ -165,7 +177,7 @@ function Run() {
                 }
             }
             else if (a === 9 && b === 4) {
-                setTimeout(function () { eight.value = "X"; squaresStatus[7] = 1; eight.classList.add("colorX"); eight.classList.remove("hoverButton"); document.getElementById("eight").disabled = true; }, 2000)
+                setTimeout(function () { eightFront.value = "X"; eightContainer.classList.remove("flip"); squaresStatus[7] = 1; eightFront.classList.add("colorX"); eight.classList.remove("hoverButton"); document.getElementById("eight").disabled = true; }, 2000)
                 setTimeout(function () { document.getElementById("i_text").innerHTML = "Your turn."; whattoenable(); }, 3000)
                 one.onclick = function () { userClick(c1, 0, invoer3); }
                 two.onclick = function () { userClick(c1, 1, invoer3); }
@@ -176,7 +188,7 @@ function Run() {
                     whattodisable();
                     if (c === 2) {
                         setTimeout(function () { document.getElementById("i_text").innerHTML = "My turn:"; }, 1000)
-                        setTimeout(function () { seven.value = "X"; squaresStatus[1] = 1; seven.classList.add("colorX"); seven.classList.remove("hoverButton"); document.getElementById("seven").disabled = true; }, 2000)
+                        setTimeout(function () { sevenFront.value = "X"; sevenContainer.classList.remove("flip"); squaresStatus[1] = 1; sevenFront.classList.add("colorX"); seven.classList.remove("hoverButton"); document.getElementById("seven").disabled = true; }, 2000)
                         setTimeout(function () { document.getElementById("i_text").innerHTML = "Your turn."; whattoenable(); }, 3000)
                         one.onclick = function () { userClick(d1, 0, invoer4); }
                         three.onclick = function () { userClick(d1, 2, invoer4); }
@@ -190,7 +202,7 @@ function Run() {
                 }
             }
             else if (a === 2 && b === 7) {
-                setTimeout(function () { six.value = "X"; squaresStatus[5] = 1; six.classList.add("colorX"); six.classList.remove("hoverButton"); document.getElementById("six").disabled = true; }, 2000)
+                setTimeout(function () { sixFront.value = "X"; sixContainer.classList.remove("flip"); squaresStatus[5] = 1; sixFront.classList.add("colorX"); six.classList.remove("hoverButton"); document.getElementById("six").disabled = true; }, 2000)
                 setTimeout(function () { document.getElementById("i_text").innerHTML = "Your turn."; whattoenable(); }, 3000)
                 one.onclick = function () { userClick(c1, 0, invoer3); }
                 three.onclick = function () { userClick(c1, 2, invoer3); }
@@ -206,7 +218,7 @@ function Run() {
                 }
             }
             else if (a === 4 && b === 9) {
-                setTimeout(function () { two.value = "X"; squaresStatus[1] = 1; two.classList.add("colorX"); two.classList.remove("hoverButton"); document.getElementById("two").disabled = true; }, 2000)
+                setTimeout(function () { twoFront.value = "X"; twoContainer.classList.remove("flip"); squaresStatus[1] = 1; twoFront.classList.add("colorX"); two.classList.remove("hoverButton"); document.getElementById("two").disabled = true; }, 2000)
                 setTimeout(function () { document.getElementById("i_text").innerHTML = "Your turn."; whattoenable(); }, 3000)
                 one.onclick = function () { userClick(c1, 0, invoer3); }
                 three.onclick = function () { userClick(c1, 2, invoer3); }
@@ -221,7 +233,7 @@ function Run() {
                 }
             }
             else if (a === 6 && b === 1) {
-                setTimeout(function () { eight.value = "X"; squaresStatus[7] = 1; eight.classList.add("colorX"); eight.classList.remove("hoverButton"); document.getElementById("eight").disabled = true; }, 2000)
+                setTimeout(function () { eightFront.value = "X"; eightContainer.classList.remove("flip"); squaresStatus[7] = 1; eightFront.classList.add("colorX"); eight.classList.remove("hoverButton"); document.getElementById("eight").disabled = true; }, 2000)
                 setTimeout(function () { document.getElementById("i_text").innerHTML = "Your turn."; whattoenable(); }, 3000)
                 two.onclick = function () { userClick(c1, 1, invoer3); }
                 three.onclick = function () { userClick(c1, 2, invoer3); }
@@ -236,7 +248,7 @@ function Run() {
                 }
             }
             else if (a === 8 && b === 3) {
-                setTimeout(function () { four.value = "X"; squaresStatus[3] = 1; four.classList.add("colorX"); four.classList.remove("hoverButton"); document.getElementById("four").disabled = true; }, 2000)
+                setTimeout(function () { fourFront.value = "X"; fourContainer.classList.remove("flip"); squaresStatus[3] = 1; fourFront.classList.add("colorX"); four.classList.remove("hoverButton"); document.getElementById("four").disabled = true; }, 2000)
                 setTimeout(function () { document.getElementById("i_text").innerHTML = "Your turn."; whattoenable(); }, 3000)
                 one.onclick = function () { userClick(c1, 0, invoer3); }
                 two.onclick = function () { userClick(c1, 1, invoer3); }
@@ -251,21 +263,21 @@ function Run() {
                 }
             }
             else {
-                if (one.value === "X") { lose(1 - 1); }
-                else if (two.value === "X") { lose(2 - 1); }
-                else if (three.value === "X") { lose(3 - 1); }
-                else if (four.value === "X") { lose(4 - 1); }
-                else if (six.value === "X") { lose(6 - 1); }
-                else if (seven.value === "X") { lose(7 - 1); }
-                else if (eight.value === "X") { lose(8 - 1); }
-                else if (nine.value === "X") { lose(9 - 1); }
+                if (oneFront.value === "X") { lose(1 - 1); }
+                else if (twoFront.value === "X") { lose(2 - 1); }
+                else if (threeFront.value === "X") { lose(3 - 1); }
+                else if (fourFront.value === "X") { lose(4 - 1); }
+                else if (sixFront.value === "X") { lose(6 - 1); }
+                else if (sevenFront.value === "X") { lose(7 - 1); }
+                else if (eightFront.value === "X") { lose(8 - 1); }
+                else if (nineFront.value === "X") { lose(9 - 1); }
             }
         }
     }
 
     function userClick(cc, whichNum, invoer) {
-        cc = whichNum + 1, numnq[whichNum].value = "O"; squaresStatus[whichNum] = 1; numnq[whichNum].classList.add("clickedColor"); numnq[whichNum].classList.remove("hoverButton");
-        document.getElementById(numq[whichNum]).disabled = true; invoer(cc);
+        cc = whichNum + 1, numnqFront[whichNum].value = "O"; numnqCon[whichNum].classList.remove("flip"); squaresStatus[whichNum] = 1; numnqFront[whichNum].classList.add("clickedColor"); numnqFront[whichNum].classList.remove("hoverButton");
+        document.getElementById(numqFront[whichNum]).disabled = true; invoer(cc);
     }
 
     function whattodisable() {
@@ -284,7 +296,7 @@ function Run() {
     function lose(loseNumber) {
         if (loseNumber < 4) { loseOpposite = 8 - loseNumber; }
         else if (loseNumber > 4) { loseOpposite = 8 - loseNumber; }
-        setTimeout(function () { numnq[loseOpposite].value = "X"; squaresStatus[loseOpposite] = 1; numnq[loseOpposite].classList.add("colorX"); numnq[loseOpposite].classList.remove("hoverButton"); document.getElementById(numq[loseOpposite]).disabled = true; }, 2000)
+        setTimeout(function () { numnqFront[loseOpposite].value = "X"; numnqCon[loseOpposite].classList.remove("flip"); squaresStatus[loseOpposite] = 1; numnqFront[loseOpposite].classList.add("colorX"); numnq[loseOpposite].classList.remove("hoverButton"); document.getElementById(numq[loseOpposite]).disabled = true; }, 2000)
         setTimeout(function () { document.getElementById("i_text").innerHTML = "You lose."; }, 3000)
         setTimeout(function () { input.classList.remove("disappear"); document.getElementById("input").value = "Try again?"; input.classList.add("appear"); }, 4000)
         setTimeout(function () { input.classList.remove("disappear", "appear"); input.disabled = false; }, 6000)
@@ -297,7 +309,7 @@ function Run() {
         if (loseNumber < 4) { loseOpposite = loseNumber + 5; }
         else if (loseNumber > 4) { loseOpposite = loseNumber - 5; }
         setTimeout(function () { document.getElementById("i_text").innerHTML = "My turn:"; }, 1000)
-        setTimeout(function () { numnq[loseOpposite].value = "X"; squaresStatus[loseOpposite] = 1; numnq[loseOpposite].classList.add("colorX"); numnq[loseOpposite].classList.remove("hoverButton"); document.getElementById(numq[loseOpposite]).disabled = true; }, 2000)
+        setTimeout(function () { numnqFront[loseOpposite].value = "X"; numnqCon[loseOpposite].classList.remove("flip"); squaresStatus[loseOpposite] = 1; numnqFront[loseOpposite].classList.add("colorX"); numnq[loseOpposite].classList.remove("hoverButton"); document.getElementById(numq[loseOpposite]).disabled = true; }, 2000)
         setTimeout(function () { document.getElementById("i_text").innerHTML = "You lose."; }, 3000)
         setTimeout(function () { input.classList.remove("disappear"); document.getElementById("input").value = "Try again?"; input.classList.add("appear"); }, 4000)
         setTimeout(function () { input.classList.remove("disappear", "appear"); input.disabled = false; }, 6000)
@@ -320,21 +332,26 @@ function Run2() {
 
     Vars();
 
+    //for (i = 0; i < squaresStatus.length; i++) {
+    //    document.getElementById(numq[i]).disabled = false;
+    //    numnq[i].classList.remove("hoverButton"); numnq[i].classList.add("back");
+    //}
+
     for (i = 0; i < squaresStatus.length; i++) {
         document.getElementById(numq[i]).disabled = false;
-        numnq[i].classList.remove("clickedColor", "colorX", "hoverButton");        
+        numnq[i].classList.remove("clickedColor", "colorX", "hoverButton"); numnq[i].classList.add("back");
     }
     whattodisable();
     input.classList.add("disappear"); input.disabled = true;
-    for (i = 0; i < squaresStatus.length; i++) { numnq[i].classList.add("flip"); }
+    for (i = 0; i < squaresStatus.length; i++) { numnqCon[i].classList.add("flip"); }
     setTimeout(function () {
-        one.value = ""; two.value = ""; three.value = ""; four.value = ""; five.value = "";
-        six.value = ""; seven.value = ""; eight.value = ""; nine.value = "";
+        oneFront.value = ""; twoFront.value = ""; threeFront.value = ""; fourFront.value = ""; fiveFront.value = "";
+        sixFront.value = ""; sevenFront.value = ""; eightFront.value = ""; nineFront.value = "";
     }, 250)
     setTimeout(function () {
         document.getElementById("i_text").innerHTML = "You may begin. Click a field:";
-        for (i = 0; i < squaresStatus.length; i++) { numnq[i].classList.remove("flip"); }
-        for (i = 0; i < squaresStatus.length; i++) { numnq[i].classList.add("hoverButton"); }
+        //for (i = 0; i < squaresStatus.length; i++) { numnqCon[i].classList.remove("flip"); }
+        for (i = 0; i < squaresStatus.length; i++) { numnqFront[i].classList.remove("clickedColor", "colorX", "back"); numnq[i].classList.add("hoverButton"); }
         Turn();
     }, 2000)
 
@@ -348,7 +365,7 @@ function Run2() {
                 whattoenable();
             }, 1000)
         }
-        else { whattoenable(); }       
+        else { whattoenable(); }
         one.onclick = function () { circleClick(0); invoer(sumStatus); }
         two.onclick = function () { circleClick(1); invoer(sumStatus); }
         three.onclick = function () { circleClick(2); invoer(sumStatus); }
@@ -360,7 +377,7 @@ function Run2() {
         nine.onclick = function () { circleClick(8); invoer(sumStatus); }
         function invoer(sumStatus) {
             whattodisable();
-            for (i = 0; i < squaresStatus.length; i++) { sumStatus = sumStatus + squaresStatus[i]; }            
+            for (i = 0; i < squaresStatus.length; i++) { sumStatus = sumStatus + squaresStatus[i]; }
             setTimeout(function () { document.getElementById("i_text").innerHTML = "Thank you."; }, 1000)
             if (circlesCrosses[0] === 2 && circlesCrosses[1] === 2 && circlesCrosses[2] === 2) { win2(); }
             else if (circlesCrosses[3] === 2 && circlesCrosses[4] === 2 && circlesCrosses[5] === 2) { win2(); }
@@ -375,10 +392,10 @@ function Run2() {
                 setTimeout(function () { document.getElementById("i_text").innerHTML = "My turn:"; }, 2000)
                 setTimeout(function () {
 
-                    
+
                     if (sumStatus === 1 && circlesCrosses[4] === 0) { crossClick(4); }
-                    //GOD MODE:
-                    //else if (sumStatus === 1 && circlesCrosses[4] === 2) { crossClick(0); }
+                        //GOD MODE:
+                        //else if (sumStatus === 1 && circlesCrosses[4] === 2) { crossClick(0); }
                     else if (circlesCrosses[0] === 1 && circlesCrosses[1] === 1 && circlesCrosses[2] === 0 && doubleStatus[0] !== 1) { crossClick(2); doubleStatus[0] = 1; }
                     else if (circlesCrosses[1] === 1 && circlesCrosses[2] === 1 && circlesCrosses[0] === 0 && doubleStatus[1] !== 1) { crossClick(0); doubleStatus[1] = 1; }
                     else if (circlesCrosses[3] === 1 && circlesCrosses[4] === 1 && circlesCrosses[5] === 0 && doubleStatus[2] !== 1) { crossClick(5); doubleStatus[2] = 1; }
@@ -451,12 +468,12 @@ function Run2() {
     }
 
     function circleClick(circleIndex) {
-        numnq[circleIndex].value = "O"; circlesCrosses[circleIndex] = 2; squaresStatus[circleIndex] = 1; numnq[circleIndex].classList.add("clickedColor"); numnq[circleIndex].classList.remove("hoverButton");
+        numnqFront[circleIndex].value = "O"; numnqCon[circleIndex].classList.remove("flip"); circlesCrosses[circleIndex] = 2; squaresStatus[circleIndex] = 1; numnqFront[circleIndex].classList.add("clickedColor"); numnq[circleIndex].classList.remove("hoverButton");
         document.getElementById(numq[circleIndex]).disabled = true;
     }
 
     function crossClick(crossIndex) {
-        numnq[crossIndex].value = "X"; circlesCrosses[crossIndex] = 1; squaresStatus[crossIndex] = 1; numnq[crossIndex].classList.add("colorX"); numnq[crossIndex].classList.remove("hoverButton");
+        numnqFront[crossIndex].value = "X"; numnqCon[crossIndex].classList.remove("flip"); circlesCrosses[crossIndex] = 1; squaresStatus[crossIndex] = 1; numnqFront[crossIndex].classList.add("colorX"); numnq[crossIndex].classList.remove("hoverButton");
         document.getElementById(numq[crossIndex]).disabled = true;
     }
 
