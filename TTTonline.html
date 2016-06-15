@@ -9,26 +9,53 @@
     <p id="titel"><strong>Tic-tac-toe online</strong></p>
     <p id="copyright">© Mark van de Vries 2016</p>
     <br />
-    <p id="i_text">The board is divided into nine pieces in the below arrangement. My pieces are crosses; your's are circles. The goal is to get three pieces in a row, like this:</p>
+    <p id="i_text">The board is divided into nine pieces in the below arrangement. My pieces are crosses; yours are circles. The goal is to get three pieces in a row, like this:</p>
     <br />
     <div id="board">
-        <input class="a" id="one" type="button" value="X" />
+        <div id="oneContainer">
+            <input class="aFront" id="oneFront" type="button" value="X" />
+            <input class="a" id="one" type="button" value="" />
+        </div>
         <div class="ver"></div>
-        <input class="a" id="two" type="button" value="" />
+        <div id="twoContainer">
+            <input class="aFront" id="twoFront" type="button" value="" />
+            <input class="a" id="two" type="button" value="" />
+        </div>
         <div class="ver"></div>
-        <input class="a" id="three" type="button" value="O" />
+        <div id="threeContainer">
+            <input class="aFront" id="threeFront" type="button" value="O" />
+            <input class="a" id="three" type="button" value="" />
+        </div>
         <div class="hor"></div>
-        <input class="b" id="four" type="button" value="" />
+        <div id="fourContainer">
+            <input class="bFront" id="fourFront" type="button" value="" />
+            <input class="b" id="four" type="button" value="" />
+        </div>
         <div class="ver"></div>
-        <input class="b" id="five" type="button" value="X" />
+        <div id="fiveContainer">
+            <input class="bFront" id="fiveFront" type="button" value="X" />
+            <input class="b" id="five" type="button" value="" />
+        </div>
         <div class="ver"></div>
-        <input class="b" id="six" type="button" value="O" />
+        <div id="sixContainer">
+            <input class="bFront" id="sixFront" type="button" value="O" />
+            <input class="b" id="six" type="button" value="" />
+        </div>
         <div class="hor"></div>
-        <input class="c" id="seven" type="button" value="" />
+        <div id="sevenContainer">
+            <input class="cFront" id="sevenFront" type="button" value="" />
+            <input class="c" id="seven" type="button" value="" />
+        </div>
         <div class="ver"></div>
-        <input class="c" id="eight" type="button" value="" />
+        <div id="eightContainer">
+            <input class="cFront" id="eightFront" type="button" value="" />
+            <input class="c" id="eight" type="button" value="" />
+        </div>
         <div class="ver"></div>
-        <input class="c" id="nine" type="button" value="X" />
+        <div id="nineContainer">
+            <input class="cFront" id="nineFront" type="button" value="X" />
+            <input class="c" id="nine" type="button" value="" />
+        </div>
     </div>
     <br />
     <br />
@@ -36,9 +63,11 @@
         <input type="button" id="input" value="Let's begin" />
     </div>
     <br />
-    <div class="version-box">
-        <p class="version">v2.0</p>
-    </div>
-    <script src="TTTonline.js" type="text/javascript"></script>
+    <footer>
+        <div class="version-box">
+            <p class="version">v2.1</p>
+        </div>
+        <script src="TTTonline.js" type="text/javascript"></script>
+    </footer>
 </body>
 </html>
