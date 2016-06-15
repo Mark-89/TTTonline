@@ -1,5 +1,15 @@
-﻿body {    
-    background-color: lightgray;
+﻿html {
+    height:100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {    
+    /*background-color: #b1b1b1;*/
+    background:linear-gradient(to top left, #9c9c9c, #ffffff);
+    height:100%;
+    padding: 0;
+    margin: 0;
 }
 
 #titel {  
@@ -23,19 +33,60 @@
     font-weight: bold;
 }
 
-.a, .b, .c {
-    background-color:gray;
+#board {     
+    width:32vw; 
+    height:32vw;
+    margin:0 auto;
+    position:relative;
+    perspective:800px;
+}
+
+#oneContainer, #twoContainer, #threeContainer, #fourContainer, #fiveContainer, #sixContainer, #sevenContainer, #eightContainer, #nineContainer {
     width:10vw;
     height:10vw; 
-    border:none;    
+    float:left;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.a, .aFront, .b, .bFront, .c, .cFront {
+    margin:0;
+    /*background-color:gray;*/
+    float:left;   
+    border:none;
     font-family:Segoe UI; 
     text-align:center;
+    /*text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);*/
+    
     vertical-align:middle;
     font-size:6vw;
     line-height:0vw;
-    position:relative;   
-    z-index:0;
-    float:left;
+    position:absolute; 
+    width:10vw;
+    height:10vw; 
+    /*z-index:0;*/    
+    backface-visibility: hidden;    
+}
+
+#input, #oneFront, #twoFront, #threeFront, #fourFront, #FiveFront, #sixFront, #sevenFront, #eightFront, #nineFront, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine, .ver, .hor {   
+    /*box-shadow: 0.1vw 0.1vw 0.1vw #202020, 0.2vw 0.2vw 0.2vw #202020, 0.3vw 0.3vw 0.3vw #202020, 0.4vw 0.4vw 0.4vw #303030, 0.5vw 0.5vw 0.5vw #303030, 0.6vw 0.6vw 0.6vw #303030;*/
+    
+}
+
+.a, .b, .c {
+    /*background:#343232;*/
+    transform: rotateY( 180deg );
 }
 
 .dinges {
@@ -44,37 +95,30 @@
 
 .hor {
     background-color: black;
+    position:relative; 
     width: 32vw;
-    height: 1vw;    
-    position:relative;   
-    z-index:0; 
-    float:left
+    height: 1vw;     
+    float:left;
+     box-shadow: 0.05vw 0.05vw 0vw black, 0.10vw 0.10vw 0vw black, 0.15vw 0.15vw 0vw black, 0.20vw 0.20vw 0vw black, 0.25vw 0.25vw 0vw black, 0.30vw 0.30vw 0vw black,
+    0.35vw 0.35vw 0.10vw #202020, 0.4vw 0.4vw 0.10vw #202020, 0.45vw 0.45vw 0.15vw #303030, 0.5vw 0.5vw 0.2vw #303030,
+    -0.001vw -0.001vw 0.1vw #303030;
 }
 
 .ver {
     background-color: black;
+    position:relative; 
     width:1vw;
     height:10vw;  
-    position:relative;   
-    z-index:0;
-    float:left  
-}
-
-#board {
-    text-align:center;      
-    width:32vw; 
-    height:32vw;
-    margin:0 auto;
-    position:relative;
-    perspective:1000px;
+    float:left;
+    box-shadow: 0.05vw 0.05vw 0vw black, 0.10vw 0.10vw 0vw black, 0.15vw 0.15vw 0vw black, 0.20vw 0.20vw 0vw black, 0.25vw 0.25vw 0vw black, 0.30vw 0.30vw 0vw black,
+    0.35vw 0.35vw 0.10vw #202020, 0.4vw 0.4vw 0.10vw #202020, 0.45vw 0.45vw 0.15vw #303030, 0.5vw 0.5vw 0.2vw #303030,
+    -0.001vw -0.001vw 0.1vw #303030;
 }
 
 .flip {   
     -ms-transform:rotateY(180deg); /* IE 9 */
     -webkit-transform:rotateY(180deg); /* Safari */
-    transform:rotateY(180deg);   
-    transition:1s;
-    transform-style:preserve-3d;    
+    transform:rotateY(180deg);        
 }
 
 .disappear {
@@ -94,18 +138,40 @@
 }
 
 .hoverButton:hover {
-    background-color:darkgray;
+    background-color:#a5a5a5;
+    box-shadow: 0.05vw 0.05vw 0vw #959595, 0.10vw 0.10vw 0vw #959595, 0.15vw 0.15vw 0vw #959595, 0.20vw 0.20vw 0vw #959595, 0.25vw 0.25vw 0vw #858585, 0.30vw 0.30vw 0vw #202020,
+    0.35vw 0.35vw 0.10vw #202020, 0.4vw 0.4vw 0.10vw #202020, 0.45vw 0.45vw 0.15vw #303030, 0.5vw 0.5vw 0.2vw #303030,
+    -0.001vw -0.001vw 0.1vw #303030;
     transition:none;  
 }
 
 .clickedColor {
-    color:black;
-    background-color:darkgray;
+    color:#a5a5a5;
+    text-shadow: 0.05vw 0.05vw 0vw #959595, 0.10vw 0.10vw 0vw #959595, 0.15vw 0.15vw 0vw #959595, 0.20vw 0.20vw 0vw #959595, 0.25vw 0.25vw 0vw #858585, 0.30vw 0.30vw 0vw #202020,
+    0.35vw 0.35vw 0.10vw #202020, 0.4vw 0.4vw 0.10vw #202020, 0.45vw 0.45vw 0.15vw #303030, 0.5vw 0.5vw 0.2vw #303030,
+    -0.001vw -0.001vw 0.1vw #303030;
+    box-shadow: 0.05vw 0.05vw 0vw #959595, 0.10vw 0.10vw 0vw #959595, 0.15vw 0.15vw 0vw #959595, 0.20vw 0.20vw 0vw #959595, 0.25vw 0.25vw 0vw #858585, 0.30vw 0.30vw 0vw #202020,
+    0.35vw 0.35vw 0.10vw #202020, 0.4vw 0.4vw 0.10vw #202020, 0.45vw 0.45vw 0.15vw #303030, 0.5vw 0.5vw 0.2vw #303030,
+    -0.001vw -0.001vw 0.1vw #303030;
+    background-color:#a5a5a5;
 }
 
 .colorX {
-    color:black;
-    background-color:gray;
+    color:#585858;
+    text-shadow: 0.05vw 0.05vw 0vw #3c3c3c, 0.10vw 0.10vw 0vw #3c3c3c, 0.15vw 0.15vw 0vw #3c3c3c, 0.20vw 0.20vw 0vw #3c3c3c, 0.25vw 0.25vw 0vw #252525, 0.30vw 0.30vw 0vw #202020,
+    0.35vw 0.35vw 0.10vw #202020, 0.4vw 0.4vw 0.10vw #202020, 0.45vw 0.45vw 0.15vw #303030,0.5vw 0.5vw 0.2vw #303030,
+    -0.001vw -0.001vw 0.1vw #303030;
+    box-shadow: 0.05vw 0.05vw 0vw #3c3c3c, 0.10vw 0.10vw 0vw #3c3c3c, 0.15vw 0.15vw 0vw #3c3c3c, 0.20vw 0.20vw 0vw #3c3c3c, 0.25vw 0.25vw 0vw #252525, 0.30vw 0.30vw 0vw #202020,
+    0.35vw 0.35vw 0.10vw #202020, 0.4vw 0.4vw 0.10vw #202020, 0.45vw 0.45vw 0.15vw #303030, 0.5vw 0.5vw 0.2vw #303030,
+    -0.001vw -0.001vw 0.1vw #303030;
+    background-color:#585858;
+}
+
+.back {
+    background:#3c3c3c;    
+    box-shadow: 0.05vw 0.05vw 0vw #272727, 0.10vw 0.10vw 0vw #272727, 0.15vw 0.15vw 0vw #272727, 0.20vw 0.20vw 0vw #272727, 0.25vw 0.25vw 0vw #242424, 0.30vw 0.30vw 0vw #202020,
+    0.35vw 0.35vw 0.10vw #202020, 0.4vw 0.4vw 0.10vw #202020, 0.45vw 0.45vw 0.15vw #303030, 0.5vw 0.5vw 0.2vw #303030,
+    -0.001vw -0.001vw 0.1vw #303030;
 }
 
 #input {
@@ -132,6 +198,7 @@
 .version-box {
     position:relative;
 }
+
 .version {
     font-family:Segoe UI;
     position:absolute;
